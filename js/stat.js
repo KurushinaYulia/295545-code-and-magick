@@ -11,8 +11,8 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillStyle = '#000';
   ctx.font = '16px PT Mono';
 
-  ctx.fillText('Ура! Вы победили!', 120, 40);
-  ctx.fillText('Список результатов:', 120, 60);
+  ctx.fillText('Ура! Вы победили!', 220, 40);
+  ctx.fillText('Список результатов:', 150, 60);
 
   var max = -1;
 
@@ -24,6 +24,7 @@ window.renderStatistics = function (ctx, names, times) {
   }
 
   var histoHeight = 150;
+  var columnWidth = 40;
   var histoX = 140;
   var step = histoHeight / max;
   var columnIndent = 50;
@@ -34,16 +35,20 @@ window.renderStatistics = function (ctx, names, times) {
     var height = step * time;
 
 
-    ctx.fillText(time, histoX + columnIndent * i, histoHeight - 20);
+    ctx.fillText(time.toFixed(0), histoX + columnWidth*i + columnIndent * i, 1.6 * histoHeight - height);
 
-    ctx.fillRect(histoX + columnIndent * i, 50 + histoHeight, 40, height);
+    if(names[i] == 'Вы'){
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    } else ctx.fillStyle = "blue";
+
+    ctx.fillRect(histoX + columnWidth*i + columnIndent * i, 1.6 * histoHeight - height, columnWidth, height);
     ctx.fillStyle = '#000';
-    ctx.fillText(name, histoX + columnIndent * i, 80 + histoHeight);
+    ctx.fillText(name, histoX + columnWidth*i + columnIndent * i, 260);
   }
 };
 
 var canvas = document.querySelector('canvas');
-window.renderStatistics(canvas.getContext('2d'), ['Вы', 'Кекс', 'Борис', 'Муся'], [3.2, 5.6, 10.2, 2.3]);
+window.renderStatistics(canvas.getContext('2d'), [], []);
 
 
 
