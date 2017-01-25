@@ -37,9 +37,10 @@ window.renderStatistics = function (ctx, names, times) {
 
     ctx.fillText(time.toFixed(0), histoX + columnWidth*i + columnIndent * i, 1.6 * histoHeight - height);
 
-    if(names[i] == 'Вы'){
-      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-    } else ctx.fillStyle = "blue";
+    if (names[i] == 'Вы'){
+      ctx.fillStyle = 'rgba (255, 0, 0, 1)';
+    } else ctx.fillStyle = ['rgb (0, 0,', ((Math.random() * 5) * 50).toFixed(0),')'];
+
 
     ctx.fillRect(histoX + columnWidth*i + columnIndent * i, 1.6 * histoHeight - height, columnWidth, height);
     ctx.fillStyle = '#000';
@@ -47,8 +48,8 @@ window.renderStatistics = function (ctx, names, times) {
   }
 };
 
-var canvas = document.querySelector('canvas');
-window.renderStatistics(canvas.getContext('2d'), [], []);
+
+
 
 
 
