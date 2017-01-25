@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Юлия Курушина](https://up.htmlacademy.ru/javascript/8/user/295545).
-
+* Наставник: Денис Корнейчук.
 ---
 
 _Не удаляйте и не обращайте внимание на папки и файлы:_<br>
