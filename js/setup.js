@@ -42,59 +42,55 @@ setupFireballWrap.addEventListener('click', function () {
 
 // show/hide
 var checkThePressedKeyEnter = function (evt) {
-	return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
+  return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
 };
 
 var setupEscHandler = function (evt) {
-	if (evt.keyCode === ESCAPE_KEY_CODE){
-		setupOverlay.classList.add('invisible');
-	}
+  if (evt.keyCode === ESCAPE_KEY_CODE) {
+    setupOverlay.classList.add('invisible');
+  }
 };
 
 var showSetupOverlay = function () {
-    setupOverlay.classList.remove('invisible');
-    document.addEventListener('keydown', setupEscHandler);
+  setupOverlay.classList.remove('invisible');
+  document.addEventListener('keydown', setupEscHandler);
 };
 
 var hideSetupOverlay = function () {
-    setupOverlay.classList.add('invisible');
-     document.removeEventListener('keydown', setupEscHandler);
+  setupOverlay.classList.add('invisible');
+  document.removeEventListener('keydown', setupEscHandler);
 };
 
 
-
 // open
-setupOpen.addEventListener('click', function (){
-	showSetupOverlay();
+setupOpen.addEventListener('click', function () {
+  showSetupOverlay();
 });
 
-setupOpen.addEventListener('keydown', function (evt){
-	if (checkThePressedKeyEnter(evt)){
-	  showSetupOverlay();
-	}
+setupOpen.addEventListener('keydown', function (evt) {
+  if (checkThePressedKeyEnter(evt)) {
+    showSetupOverlay();
+  }
 });
 
 
 // close
-setupClose.addEventListener('click', function (){
-	hideSetupOverlay();
+setupClose.addEventListener('click', function () {
+  hideSetupOverlay();
 });
 
-setupClose.addEventListener('keydown', function (evt){
-	if (checkThePressedKeyEnter(evt)){
-	  hideSetupOverlay();
-	}
+setupClose.addEventListener('keydown', function (evt) {
+  if (checkThePressedKeyEnter(evt)) {
+    hideSetupOverlay();
+  }
 });
 
-setupSubmit.addEventListener('click', function (){
-	hideSetupOverlay();
+setupSubmit.addEventListener('click', function () {
+  hideSetupOverlay();
 });
 
-setupSubmit.addEventListener('keydown', function (evt){
-	if (checkThePressedKeyEnter(evt)){
-	  hideSetupOverlay();
-	}
+setupSubmit.addEventListener('keydown', function (evt) {
+  if (checkThePressedKeyEnter(evt)) {
+    hideSetupOverlay();
+  }
 });
-	
-  	
-
